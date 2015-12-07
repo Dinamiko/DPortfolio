@@ -1,0 +1,258 @@
+.dportfolio-wrapper {
+	width:90%;
+	margin-left:5%;
+	margin-right:5%;
+}
+
+.dportfolio-container-main {
+	width:100%;
+	float:left;
+}
+
+.dportfolio-header {
+  width:100%;
+  float:left;
+  margin-bottom:10px;
+}
+
+.dportfolio-header img {
+  vertical-align: middle;
+  max-width: 100%;
+  width:100%;
+  height: auto;
+  width: auto\9; 
+}
+
+.dportfolio-header ul {
+  margin:0;
+  padding:0;
+  white-space: nowrap;
+}
+
+.dportfolio-header ul li {
+  display: inline;
+  list-style-type: none;
+}
+
+.dportfolio-header ul a { 
+  padding:0;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0; 
+}
+
+.dportfolio-header ul a:link, .dportfolio-header ul a:visited {
+  text-decoration: none;
+}
+
+#dportfolio-container {
+  width:100%;
+  float:left;
+  padding-bottom:50px;
+}
+
+.dportfolio-item {
+  width:98%;
+  margin-left:1%;
+  margin-right:1%;
+  float:left;
+  margin-bottom:20px;
+  background:#FFF;
+}
+
+.dportfolio-item img {
+  vertical-align: middle;
+  max-width: 100%;
+  width:100%;
+  height: auto;
+  width: auto\9;
+}
+
+#dportfolio-container-list {
+  width:100%;
+  float:left;
+  padding-bottom:50px;
+}
+
+.dportfolio-item-list {
+  width:98%;
+  margin-left:1%;
+  margin-right:1%;
+  float:left;
+  margin-bottom:20px;
+  background:#FFF;
+}
+
+.dportfolio-item-list img {
+  vertical-align: middle;
+  max-width: 100%;
+  width:100%;
+  height: auto;
+  width: auto\9;
+}
+
+ul.dportfolio-filters {
+    margin-left: 0;
+    padding-left: 0;
+    white-space: nowrap;
+}
+
+ul.dportfolio-filters li {
+    cursor: pointer;
+    display: inline;
+    list-style-type: none;
+}
+
+ul.dportfolio-filters li { 
+  padding: 3px 10px; 
+  opacity:0.7;
+}
+
+ul.dportfolio-filters li:hover {
+    opacity: 1;
+}
+
+ul.dportfolio-filters li.selected {
+    opacity: 1;
+}
+
+.dportfolio-item-info {
+  width:100%;
+  float:left;
+}
+
+.dportfolio-item-info h3 {
+  padding:5px;
+  margin:0;
+}
+
+.dportfolio-container-single {
+  width:100%;
+  float:left;
+  padding-bottom:40px;
+}
+
+.dportfolio-container-single img {
+  vertical-align: middle;
+  max-width: 100%;
+  width:100%;
+  height: auto;
+  width: auto\9; 
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.dportfolio-single-details {
+  width:100%;
+  float:left;
+  margin-bottom:15px;
+}
+
+.dportfolio-single-details p {
+  margin:0;
+  padding:0;
+}
+
+.dportfolio-single-navigation {
+  position: relative;
+  width:100%;
+  float:left;
+  padding-bottom:50px;
+}
+
+.dportfolio-single-navigation-left {
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.dportfolio-single-navigation-right {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+@media only screen and (min-width: 640px) {
+
+  .dportfolio-item {
+    width:48%;
+    margin-left:1%;
+    margin-right:1%;
+  }
+
+  .dportfolio-item-list {
+    width:48%;
+    margin-left:1%;
+    margin-right:1%;
+  }
+
+}
+
+@media only screen and (min-width: 996px) {
+
+  .dportfolio-item {
+    width:31.333%;
+    margin-left:1%;
+    margin-right:1%;
+  }
+
+  .dportfolio-item-list {
+    width:31.333%;
+    margin-left:1%;
+    margin-right:1%;
+  }
+
+}
+
+@media only screen and (min-width: 1850px) {
+
+  .dportfolio-item {
+    width:22.9%;
+    margin-left:1%;
+    margin-right:1%;
+  }
+
+  .dportfolio-item-list {
+    width:22.9%;
+    margin-left:1%;
+    margin-right:1%;
+  }
+
+}
+
+/* Checkboxes */
+
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+.dportfolio-btn {
+  opacity:0.7;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+[data-toggle="dportfolio-buttons"]>.dportfolio-btn>input[type="checkbox"] {
+  display: none;
+}
+
+.dportfolio-btn:hover {
+  opacity:1;
+}
+
+.dportfolio-active {
+  opacity:1;
+}

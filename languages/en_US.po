@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DPortfolio\n"
+"POT-Creation-Date: 2014-07-16 15:15+0100\n"
+"PO-Revision-Date: 2014-07-16 15:16+0100\n"
+"Last-Translator: Emili Castells <wp@dinamiko.com>\n"
+"Language-Team: Emili Castells <emili.castells@dinamiko.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/class-dportfolio-ptype.php:36
+#: ../includes/class-dportfolio-ptype.php:42
+#: ../includes/class-dportfolio-ptype.php:44
+#: ../includes/class-dportfolio-ptype.php:45
+#: ../includes/class-dportfolio-ptype.php:46
+#: ../includes/class-dportfolio-ptype.php:48
+msgid "DPortfolio"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:37
+msgid "Single DPortfolio"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:38
+msgid "Add New"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:39
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:39
+#: ../includes/class-dportfolio-ptype.php:40
+#: ../includes/class-dportfolio-ptype.php:41
+#: ../includes/class-dportfolio-ptype.php:43
+msgid "Post"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:40
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:41
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:42
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:43
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:44
+msgid "Search %a"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:45
+#, php-format
+msgid "No %s Found"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:46
+#, php-format
+msgid "No %s Found In Trash"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:76
+#: ../includes/class-dportfolio-ptype.php:86
+msgid "Categories"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:77
+msgid "Category"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:78
+msgid "Search Categories"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:79
+msgid "All Categories"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:80
+msgid "Parent Category"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:81
+msgid "Parent Category:"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:82
+msgid "Edit Category"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:83
+msgid "Update Category"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:84
+msgid "Add New Category"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:85
+msgid "New Category Name"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:103
+msgid "DPortfolio Details"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:192
+#, php-format
+msgid "DPortfolio updated. %sView dportfolio%s."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:193
+msgid "DPortfolio details updated."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:194
+msgid "DPortfolio details deleted."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:195
+msgid "DPortfolio."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: ../includes/class-dportfolio-ptype.php:197
+#, php-format
+msgid "DPortfolio restored to revision from %s."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:198
+#, php-format
+msgid "DPortfolio published. %sView dportfolio%s."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:199
+msgid "DPortfolio saved."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:200
+#, php-format
+msgid "DPortfolio submitted. %sPreview dportfolio%s."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:201
+#, php-format
+msgid "DPortfolio scheduled for: %1$s. %2$sPreview dportfolio%3$s."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:201
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:202
+#, php-format
+msgid "DPortfolio draft updated. %sPreview dportfolio%s."
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:216
+msgid "Client:"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:226
+msgid "Website:"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:276
+msgid "Website"
+msgstr ""
+
+#: ../includes/class-dportfolio-ptype.php:390
+#: ../includes/class-dportfolio-ptype.php:397
+#: ../includes/class-dportfolio.php:82 ../includes/class-dportfolio.php:86
+msgid "Cheatin&#8217; huh?"
+msgstr ""
