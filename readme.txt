@@ -1,9 +1,9 @@
 === DPortfolio ===
 Contributors: dinamiko
 Tags: portfolio, projects, responsive, categories, clients, custom, custom fields
-Requires at least: 3.9
-Tested up to: 3.9.1
-Stable tag: 1.1
+Requires at least: 3.9.9
+Tested up to: 3.9.9
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +47,7 @@ https://github.com/desandro/imagesloaded
 https://github.com/dynamick/multiple-filter-masonry
 
 == Changelog ==
-
+= 2.0 =
+* Complete refactoring
 = 1.1 =
-
 * Default filter-type: list, checkbox: [dportfolio filter-type="checkbox"]
