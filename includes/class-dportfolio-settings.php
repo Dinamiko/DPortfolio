@@ -43,17 +43,8 @@ class DPORTFOLIO_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		
-		// main menu
-		$page = add_menu_page( 'DPorfolio', 'DPorfolio', 'manage_options', 'dportfolio' . '_settings',  array( $this, 'settings_page' ) );	
 
-		// support
-		//add_submenu_page( 'dportfolio' . '_settings', 'Support', 'Support', 'manage_options', 'dportfolio-support', array( $this, 'dportfolio_support_screen' ));
-
-		/*
-		// Addons submenu
-		add_submenu_page( 'dportfolio' . '_settings', 'Addons', 'Addons', 'manage_options', 'dportfolio-addons', array( $this, 'dportfolio_addons_screen' ));
-		*/
+		$page = add_submenu_page('edit.php?post_type=dportfolio', __('Settings','dportfolio'), __('Settings','dportfolio'), 'manage_options', 'testsettings', array( $this, 'settings_page' ) );
 		
 		// settings assets
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
