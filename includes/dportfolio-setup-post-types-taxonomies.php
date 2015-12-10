@@ -3,6 +3,22 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+* set query post type dportfolio post for working with dportfolio_categories 
+*/
+function dportfolio_post_archive( $query ) {
+
+    if ( !is_admin() && is_tax('dportfolio_categories') && $query->is_tax ) {
+
+        $query->set( 'post_type', array('dportfolio') );
+    	remove_action( 'pre_get_posts', 'dportfolio_post_archive' );
+
+    }
+
+}
+
+add_action('pre_get_posts', 'dportfolio_post_archive');
+
+/**
 * Register post types
 */
 function dportfolio_setup_post_types() {
@@ -13,7 +29,6 @@ function dportfolio_setup_post_types() {
 }
 
 add_action( 'init', 'dportfolio_setup_post_types', 1 );
-
 
 /**
 *
@@ -74,7 +89,6 @@ function dportfolio_register_taxonomy_args( $args ) {
     return $args;
 
 }
-
 
 /**
 * register taxonomy

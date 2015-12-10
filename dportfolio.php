@@ -80,7 +80,10 @@ if ( ! class_exists( 'DPORTFOLIO' ) ) {
 			// functions
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/dportfolio-functions.php';
 
-			// custom post type and taxonomy				
+			// custom post type and taxonomy
+			
+			//require_once DPORTFOLIO_PLUGIN_DIR . 'includes/class-dportfolio-ptype.php';				
+			//require_once DPORTFOLIO_PLUGIN_DIR . 'includes/dportfolio-post-types.php';		
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/class-dportfolio-post-type.php';
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/class-dportfolio-taxonomy.php';
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/dportfolio-setup-post-types-taxonomies.php';

@@ -129,15 +129,23 @@ class DPORTFOLIO_Settings {
 
 		// dportfolio settings
 		$settings['dpbasic'] = array(
-			'title'					=> '',
-			'description'			=> '',
+			'title'					=> __( 'URL slugs', 'dportfolio' ),
+			'description'			=> __( 'Change default DPortfolio URL slugs.', 'dportfolio' ),
 			'fields'				=> array(				
 				array(
 					'id' 			=> 'portfolio_slug',
-					'label'			=> __( 'Portfolio Slug' , 'dportfolio' ),
-					'description'	=> '',
+					'label'			=> __( 'Portfolio URL slug' , 'dportfolio' ),
+					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
 					'type'			=> 'text',
 					'default'		=> 'dportfolio',
+					'placeholder'	=> ''
+				),
+				array(
+					'id' 			=> 'categories_slug',
+					'label'			=> __( 'Categories URL slug' , 'dportfolio' ),
+					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
+					'type'			=> 'text',
+					'default'		=> 'dportfolio_categories',
 					'placeholder'	=> ''
 				),
 				
