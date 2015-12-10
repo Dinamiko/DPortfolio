@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
-* set query post type dportfolio post for working with dportfolio_categories 
+* set query post type dportfolio for taxonomy dportfolio_categories 
 */
 function dportfolio_post_archive( $query ) {
 
@@ -31,11 +31,16 @@ function dportfolio_setup_post_types() {
 add_action( 'init', 'dportfolio_setup_post_types', 1 );
 
 /**
-*
+* setup post type args
 */
 function dportfolio_register_args( $args ) {
 
-	$args['rewrite'] = array('slug' => 'dportfolio');
+	// get dportfolio_portfolio_slug option 
+	$dportfolio_portfolio_slug = get_option( 'dportfolio_portfolio_slug', 'dportfolio' );
+
+	// set rewrite slug to dportfolio_portfolio_slug option  value
+	$args['rewrite'] = array('slug' => $dportfolio_portfolio_slug );
+
 	$args['menu_icon'] = 'dashicons-portfolio';
 	$args['supports'] = array( 'title', 'editor', 'excerpt', 'thumbnail' );
 	$args['public'] = true;
@@ -71,20 +76,26 @@ function dportfolio_register_post_type ( $post_type = '', $plural = '', $single 
 function dportfolio_setup_taxonomies() {
 
 	dportfolio_register_taxonomy( 'dportfolio_categories', __( 'Categories', 'dportfolio' ), __( 'Category', 'dportfolio' ), 'dportfolio' );
-	add_filter( 'dportfolio_register_taxonomy_args',  'dportfolio_register_taxonomy_args' );
+	add_filter( 'dportfolio_categories_register_args',  'dportfolio_categories_register_args' );
 
 }
 
 add_action( 'init', 'dportfolio_setup_taxonomies', 0 );
 
+
 /**
-*
+* setup taxonomy args
 */
-function dportfolio_register_taxonomy_args( $args ) {
+function dportfolio_categories_register_args( $args ) {
+
+	// get dportfolio_categories_slug option 
+	$dportfolio_categories_slug = get_option( 'dportfolio_categories_slug', 'dportfolio_categories' );
+
+	// set rewrite slug to dportfolio_categories_slug option value
+	$args['rewrite'] = array('slug' => $dportfolio_categories_slug );
 
     $args['public'] = true;
     $args['hierarchical'] = true;
-    $args['rewrite'] = true;
 
     return $args;
 

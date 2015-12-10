@@ -2,6 +2,9 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+* fires when activating the plugin
+*/
 function dportfolio_activation() {
 
 	dportfolio_setup_post_types();

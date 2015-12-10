@@ -44,7 +44,7 @@ class DPORTFOLIO_Settings {
 	 */
 	public function add_menu_item () {
 
-		$page = add_submenu_page('edit.php?post_type=dportfolio', __('Settings','dportfolio'), __('Settings','dportfolio'), 'manage_options', 'testsettings', array( $this, 'settings_page' ) );
+		$page = add_submenu_page('edit.php?post_type=dportfolio', __('Settings','dportfolio'), __('Settings','dportfolio'), 'manage_options', 'dportfolio_settings', array( $this, 'settings_page' ) );
 		
 		// settings assets
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
@@ -116,7 +116,7 @@ class DPORTFOLIO_Settings {
 	 * @return array 		Modified links
 	 */
 	public function add_settings_link ( $links ) {
-		$settings_link = '<a href="admin.php?page=' . 'dportfolio' . '_settings">' . __( 'Settings', 'dportfolio' ) . '</a>';
+		$settings_link = '<a href="edit.php?post_type=dportfolio&page=dportfolio_settings">'. __( 'Settings', 'dportfolio' ) . '</a>';
   		array_push( $links, $settings_link );
   		return $links;
 	}
