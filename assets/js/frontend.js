@@ -1,52 +1,50 @@
-jQuery(document).ready(function($) {
+jQuery(window).load(function(){
 
-	function onResize() {
+    var grid = jQuery( '.items' );
+    var filterOptions = jQuery('.filter-options');
+    var btns = filterOptions.children();
+        
+    grid.imagesLoaded( function() {
+        grid.shuffle({
+            itemSelector:'.dportfolio-item',
+            gutterWidth: 30,
+            delimeter:','
+        });   
+    });
 
-		// checkboxes
+    btns.on('click', function() {
 
-		var container = $('#dportfolio-container').imagesLoaded( function() {
+        var jQuerythis = jQuery(this),
+        isActive = jQuerythis.hasClass( 'active' ),
+        group = isActive ? 'all' : jQuerythis.data('group');
 
-		  container.masonry({});
+        if ( !isActive ) { jQuery('.filter-options .active').removeClass('active'); }
 
-		});
+        jQuerythis.toggleClass('active');
+        grid.shuffle( 'shuffle', jQuery(this).data('group') );
 
-	    container.multipleFilterMasonry({
-	    	itemSelector: '.dportfolio-item',
-	  		filtersGroupSelector:'.dportfolio-filters'       
-	    });
+    });
 
-	    // list
-
-		var container_list = $('#dportfolio-container-list').imagesLoaded( function() {
-
-		  container_list.masonry({});
-
-		});
-		
-		container_list.multipleFilterMasonry({
-			itemSelector: '.dportfolio-item-list',
-			filtersGroupSelector:'.dportfolio-filters',
-			selectorType: 'list'
-		});
-	
-	}
-	
-	$(window).resize(onResize);
-	onResize();
-
-	$( 'input[type="checkbox"]' ).click(function(e) {
-			
-		if ( $(this).parent().hasClass('dportfolio-active')) {
-
-	 		$(this).parent().removeClass('dportfolio-active');
-
-	   	} else {
-
-	   		$(this).parent().addClass('dportfolio-active');
-
-	   	}
-	    
-	});
-	
+    function onResize() {
+      
+    }
+    
+    jQuery(window).resize(onResize);
+    onResize();
+  
 });
 
+jQuery(document).ready(function($) {
+
+
+
+    // gallery (uses default masonry)     
+    /*
+    var container = $('.gallery-items');
+      
+    container.imagesLoaded( function() {
+        container.masonry({"gutter": 25});
+    });
+    */
+
+});

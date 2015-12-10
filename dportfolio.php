@@ -57,6 +57,7 @@ if ( ! class_exists( 'DPORTFOLIO' ) ) {
 
 		private function includes() {
 			
+			
 			// settings / metaboxes
 			if ( is_admin() ) {
 
@@ -69,11 +70,11 @@ if ( ! class_exists( 'DPORTFOLIO' ) ) {
 				require_once DPORTFOLIO_PLUGIN_DIR . 'includes/dportfolio-metaboxes.php';
 
 			}
-
+			
 			// shortcodes
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/class-dportfolio-template-loader.php';
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/dportfolio-shortcodes.php';
-
+			
 			// load css / js
 			require_once DPORTFOLIO_PLUGIN_DIR . 'includes/dportfolio-load-js-css.php';						
 

@@ -1,190 +1,143 @@
-<?php 
-/**
-* dportfolio-index.php
-* This template is used to display the portfolio
-*
-* Do not edit this template directly, 
-* copy this template and paste in your theme inside a directory named dportfolio 
-*/ 
-
-// get shortcode attributes
-global $dportfolio_atts;
-$view = esc_attr( $dportfolio_atts['view'] );
-$limit = esc_attr( $dportfolio_atts['limit'] );
-$filter = esc_attr( $dportfolio_atts['filter'] );
-$filter_type = esc_attr( $dportfolio_atts['filter_type'] );
-//echo $view .'<br>'. $limit .'<br>'. $filter .'<br>'. $filter_type;
-
-?>
-
-<div class="dportfolio-container-main">
-
 <?php
-	$args = array(
-		'post_type' => 'dportfolio',
-		'post_status' => 'publish',
-		'posts_per_page' => -1
-	);
-
-	$the_query = new WP_Query( $args );
-
-	if ( $the_query->have_posts() ) {
-
-	   	while ( $the_query->have_posts() ) {
-	        $the_query->the_post();
-	        global $post;
-
-	        echo '<h1>'.get_the_title().'</h1>';
-	        echo '<a href="'. get_permalink( $post->ID ).'">'.get_the_title().'</a>';
-
-			//$terms = get_terms( 'dportfolio_categories' );
-	        //echo var_dump($terms);
-
-			/*
-			$content .= '<ul class="dportfolio-filters">';					        				
-			$content .= '<li data-filter="all">All</li>';
-
-			foreach ( $terms as $term ) { 
-
-				$content .= '<li data-filter="'. $term->slug .'">'. $term->name .'</li>';
-
-			}
-
-			$content .= '</ul>';
-
-			echo $content;
-			*/
-
-
-		}
-
-	} 
-
-	wp_reset_postdata();
+/**
+ *  This template is used to display DPortfolio index page [dportfolio]
+ */
 ?>
+
+<?php 
+
+	// shortcode attributes
+	global $dportfolio_atts; 
+
+	// columns
+	$columns = esc_attr( $dportfolio_atts['columns'] );
+	$col = 'col'.$columns;
+
+	// filter
+	$filter = esc_attr( $dportfolio_atts['filter'] );
+
+	// limit
+	$limit = esc_attr( $dportfolio_atts['limit'] );
+
+	//echo $columns.' '.$col.' '.$filter.' '.$limit;
+	$count = 0;
+
+?>
+
+<div class="dportfolio-container">
+
+	<?php if( $filter == 'true' ) { ?>
+
+		<div class="dportfolio-nav-filter">
+
+			<div class="filter-options">
+
+				<button class="active" data-group="all">All</button>
+
+				<?php
+
+				$taxonomies = array( 'dportfolio_categories' ); 
+				$terms = get_terms($taxonomies);
+										
+				foreach ( $terms as $term ) { ?>
+
+					<button class="" data-group="<?php echo $term->slug;?>"><?php echo $term->name;?></button>
+
+				<?php }	?>
+
+			</div>
+
+		</div>
+
+	<?php } ?>
+
+	<div class="dportfolio-items-container">
+
+		<div class="items">
+
+			<?php
+				$args = array(
+					'post_type' => 'dportfolio',
+					'post_status' => 'publish',
+					'posts_per_page' => -1
+				);
+					 
+				$the_query = new WP_Query( $args );
+					 
+				if ( $the_query->have_posts() ) {
+					 
+					while ( $the_query->have_posts() ) {
+					 	$the_query->the_post(); 
+				        global $post;
+				      
+						$terms = get_the_terms( $post->ID, 'dportfolio_categories' );
+
+						$cats_slugs = array(); 
+						$cats_ids = array(); 
+
+						if ( $terms && ! is_wp_error( $terms ) ) {
+									
+							foreach ( $terms as $term ) {
+
+								array_push( $cats_slugs, $term->slug );
+								array_push( $cats_ids, $term->term_id );
+
+							}
+
+							$cats_slugs = implode(',', $cats_slugs );
+							$cats_ids = implode(',', $cats_ids );
+
+						} ?>
+
+						<div class="dportfolio-item <?php echo $col;?>" data-groups="<?php echo $cats_slugs;?>">
+
+							<?php if ( has_post_thumbnail() ) { ?> 
+
+								<a href="<?php the_permalink();?>">
+									<?php the_post_thumbnail('large'); ?>
+								</a>
+
+							<?php } ?>
+	
+							<h2><?php the_title();?></h2>
+
+							<?php
+								// TODO the_content, the_excerpt, get_the_content... 
+								// causes a PHP Fatal error:  Allowed memory size of...
+								// Try getting a metafield value 
+								echo get_post_meta( $post->ID, '_client', true );
+							?>
+
+						</div>
+					 
+				<?php }
+					 
+				} 
+					 
+				wp_reset_postdata(); 
+			?>
+
+		</div>
+
+	</div>
 
 </div>
 
-<?php 
-/*
-				$content = '<div class="dportfolio-container-main">';
 
-				    $args = array(
-				    	'post_type' => 'dportfolio',
-				    	'post_status' => 'publish',
-				    	'posts_per_page'=> -1
-				    );
-				    
-				    $the_query = new WP_Query( $args ); 
 
-					        $content .= '<div class="dportfolio-header">';
 
-					        		if( $a['filter'] == 'true') {
 
-					        			if( $a['filter_type'] == 'checkbox') {
 
-						        			$terms = get_terms( 'dportfolio_categories' ); 
 
-										    $content .= '<div class="dportfolio-filters">';
 
-										        $content .= '<div data-toggle="dportfolio-buttons">';
-		
-													foreach ( $terms as $term ) { 
 
-											            $content .= '<label class="dportfolio-btn">';
-											                $content .= '<input type="checkbox" value="'. $term->slug .'">';
-											                $content .= $term->name;
-											            $content .= '</label>';
 
-													} 									        
 
-										        $content .= '</div>';
 
-										    $content .= '</div>';					 
 
-					        			} else {
-					        				
-					        				$terms = get_terms( 'dportfolio_categories' );
 
-					        				$content .= '<ul class="dportfolio-filters">';					        				
-												$content .= '<li data-filter="all">All</li>';
 
-												foreach ( $terms as $term ) { 
 
-													$content .= '<li data-filter="'. $term->slug .'">'. $term->name .'</li>';
 
-												}
 
-											$content .= '</ul>';
 
-					        			}
-
-					        		}
-
-					        $content .= '</div>';
-
-					        if( $a['filter_type'] == 'checkbox') {
-
-					        	$content .= '<div id="dportfolio-container">';
-
-					        } else {
-
-					        	$content .= '<div id="dportfolio-container-list">';
-
-					        }					        
-
-							if ( $the_query->have_posts() ) {
-						    	    	
-						    	while ( $the_query->have_posts() ) {
-
-						    		$the_query->the_post();
-						    		global $post;
-
-								    	$terms = get_the_terms( $post->ID, 'dportfolio_categories' );
-
-								    	if ( $terms && ! is_wp_error( $terms ) ) { 
-
-									    	foreach ( $terms as $term ) {
-
-									    		$category = $term->slug;
-
-									    	}
-
-								    	}
-					  
-							                if( $a['filter_type'] == 'checkbox') {
-
-							                	 $content .='<div class="dportfolio-item '. $category .'">';
-
-							                } else {
-
-							                	 $content .='<div class="dportfolio-item-list '. $category .'">';
-
-							                }
-
-								               
-									                $content .='<a href="'. get_the_permalink() .'">';	
-
-														$content .= get_the_post_thumbnail( $post->ID, 'large');
-
-									                    $content .='<div class="dportfolio-item-info">';
-									                        $content .='<h3>'. get_the_title() .'</h3>';
-									                    $content .='</div>';
-
-									                $content .='</a>';
-
-								             	$content .='</div>';							             
- 
-
-						    	}
-
-						    }
-
-						    wp_reset_postdata(); 
-
-							$content .='</div>';
-
-				$content .='</div>';
-
-				echo $content;
-*/
