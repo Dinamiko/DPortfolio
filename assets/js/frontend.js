@@ -1,47 +1,18 @@
-jQuery(document).ready(function($) {
-
-
-
-  var grid = $( '.portfolio-items' );
-  var filterOptions = $('.filter-options');
-  var btns = filterOptions.children();
-        
-  grid.imagesLoaded( function() {
-      grid.shuffle({
-          itemSelector:'.dportfolio-item',
-          gutterWidth: 30,
-          delimeter:','
-      });       
-  });
-
-  btns.on('click', function() {
-
-      console.log(9)
-
-      var $this = $(this),
-      isActive = $this.hasClass( 'active' ),
-      group = isActive ? 'all' : $this.data('group');
-
-      if ( !isActive ) { $('.filter-options .active').removeClass('active'); }
-
-      $this.toggleClass('active');
-      grid.shuffle( 'shuffle', $(this).data('group') );
-
-  });
-
-  /*
-  // gallery (uses default masonry)     
+jQuery(window).load(function(){
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   var container = $('.gallery-items');
+=======
+    function onResize() { }
+>>>>>>> parent of 6d3029d... not working
     
-  container.imagesLoaded( function() {
-      container.masonry({"gutter": 25});
-  });
-*/
-
+    jQuery(window).resize(onResize);
+    onResize();
+  
 });
 
+<<<<<<< HEAD
 /*
 var DEMO = (function( jQuery ) {
   'use strict';
@@ -117,11 +88,23 @@ var DEMO = (function( jQuery ) {
         jQuerythis.toggleClass('active');
         grid.shuffle( 'shuffle', jQuery(this).data('group') );
 >>>>>>> parent of 735c7e8... resolves #11
+=======
+jQuery(document).ready(function($) {
+>>>>>>> parent of 6d3029d... not working
 
-      // Filter elements
-      jQuerygrid.shuffle( 'shuffle', group );
+    var grid = $( '.dportfolio-items' );
+    var filterOptions = $('.filter-options');
+    var btns = filterOptions.children();
+    		
+    grid.imagesLoaded( function() {
+        grid.shuffle({
+            itemSelector:'.dportfolio-item',
+            gutterWidth: 30,
+            delimeter:','
+        });		
     });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     jQuerybtns = null;
   },
@@ -131,61 +114,22 @@ var DEMO = (function( jQuery ) {
     jQuery('.sort-options').on('change', function() {
       var sort = this.value,
           opts = {};
+=======
+    btns.on('click', function() {
+>>>>>>> parent of 6d3029d... not working
 
-      // We're given the element wrapped in jQuery
-      if ( sort === 'date-created' ) {
-        opts = {
-          reverse: true,
-          by: function(jQueryel) {
-            return jQueryel.data('date-created');
-          }
-        };
-      } else if ( sort === 'title' ) {
-        opts = {
-          by: function(jQueryel) {
-            return jQueryel.data('title').toLowerCase();
-          }
-        };
-      }
+        var $this = $(this),
+        isActive = $this.hasClass( 'active' ),
+        group = isActive ? 'all' : $this.data('group');
 
-      // Filter elements
-      jQuerygrid.shuffle('sort', opts);
+        if ( !isActive ) { $('.filter-options .active').removeClass('active'); }
+
+        $this.toggleClass('active');
+        grid.shuffle( 'shuffle', $(this).data('group') );
+
     });
-  },
 
-  setupSearching = function() {
-    // Advanced filtering
-    jQuery('.js-shuffle-search').on('keyup change', function() {
-      var val = this.value.toLowerCase();
-      jQuerygrid.shuffle('shuffle', function(jQueryel, shuffle) {
-
-        // Only search elements in the current group
-        if (shuffle.group !== 'all' && jQuery.inArray(shuffle.group, jQueryel.data('groups')) === -1) {
-          return false;
-        }
-
-        var text = jQuery.trim( jQueryel.find('.picture-item__title').text() ).toLowerCase();
-        return text.indexOf(val) !== -1;
-      });
-    });
-  },
-
-  // Re layout shuffle when images load. This is only needed
-  // below 768 pixels because the .picture-item height is auto and therefore
-  // the height of the picture-item is dependent on the image
-  // I recommend using imagesloaded to determine when an image is loaded
-  // but that doesn't support IE7
-  listen = function() {
-   
-    //var debouncedLayout = jQuery.throttle( 300, function() {
-      //jQuerygrid.shuffle('update');
-    //});
-
-
-    // Get all images inside shuffle
-    jQuerygrid.find('img').each(function() {
-      var proxyImage;
-
+<<<<<<< HEAD
       // Image already loaded
       if ( this.complete && this.naturalWidth !== undefined ) {
         return;
@@ -213,32 +157,19 @@ jQuery(document).ready(function($) {
 
 
 
+=======
+>>>>>>> parent of 6d3029d... not working
     // gallery (uses default masonry)     
     /*
     var container = $('.gallery-items');
       
     container.imagesLoaded( function() {
         container.masonry({"gutter": 25});
+<<<<<<< HEAD
 >>>>>>> parent of 735c7e8... resolves #11
+=======
+>>>>>>> parent of 6d3029d... not working
     });
+    */
 
-    
-    // Because this method doesn't seem to be perfect.
-    //setTimeout(function() {
-      //debouncedLayout();
-    //}, 500);
-    
-
-  };
-
-  return {
-    init: init
-  };
-}( jQuery ));
-
-
-
-jQuery(document).ready(function() {
-  DEMO.init();
 });
-*/

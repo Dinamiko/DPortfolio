@@ -8,16 +8,9 @@ add_action( 'admin_enqueue_scripts', 'dportfolio_admin_enqueue_scripts', 10, 1 )
 add_action( 'admin_enqueue_scripts', 'dportfolio_admin_enqueue_styles', 10, 1 );
 
 function dportfolio_enqueue_styles () {
-
-	/*
-	wp_register_style( 'dportfolio-shuffle-demo-styles', plugins_url( 'dportfolio/assets/css/shuffle-demo-styles.css' ), array(), DPORTFOLIO_VERSION );
-	wp_enqueue_style( 'dportfolio-shuffle-demo-styles' );
-	*/
 	
-	/*
 	wp_register_style( 'dportfolio-shuffle-styles', plugins_url( 'dportfolio/assets/css/shuffle-styles.css' ), array(), DPORTFOLIO_VERSION );
-	wp_enqueue_style( 'dportfolio-shuffle-styles' );
-	*/	
+	wp_enqueue_style( 'dportfolio-shuffle-styles' );	
 
 	wp_register_style( 'dportfolio-frontend', plugins_url( 'dportfolio/assets/css/frontend.css' ), array(), DPORTFOLIO_VERSION );
 	wp_enqueue_style( 'dportfolio-frontend' );
