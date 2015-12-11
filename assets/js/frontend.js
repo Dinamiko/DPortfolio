@@ -2,6 +2,7 @@ jQuery(window).load(function(){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var container = $('.gallery-items');
 =======
     function onResize() { }
@@ -94,14 +95,18 @@ jQuery(document).ready(function($) {
 
     var grid = $( '.dportfolio-items' );
     var filterOptions = $('.filter-options');
+=======
+    var grid = jQuery( '.items' );
+    var filterOptions = jQuery('.filter-options');
+>>>>>>> parent of 735c7e8... resolves #11
     var btns = filterOptions.children();
-    		
+        
     grid.imagesLoaded( function() {
         grid.shuffle({
             itemSelector:'.dportfolio-item',
             gutterWidth: 30,
             delimeter:','
-        });		
+        });   
     });
 
 <<<<<<< HEAD
@@ -118,17 +123,18 @@ jQuery(document).ready(function($) {
     btns.on('click', function() {
 >>>>>>> parent of 6d3029d... not working
 
-        var $this = $(this),
-        isActive = $this.hasClass( 'active' ),
-        group = isActive ? 'all' : $this.data('group');
+        var jQuerythis = jQuery(this),
+        isActive = jQuerythis.hasClass( 'active' ),
+        group = isActive ? 'all' : jQuerythis.data('group');
 
-        if ( !isActive ) { $('.filter-options .active').removeClass('active'); }
+        if ( !isActive ) { jQuery('.filter-options .active').removeClass('active'); }
 
-        $this.toggleClass('active');
-        grid.shuffle( 'shuffle', $(this).data('group') );
+        jQuerythis.toggleClass('active');
+        grid.shuffle( 'shuffle', jQuery(this).data('group') );
 
     });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
       // Image already loaded
       if ( this.complete && this.naturalWidth !== undefined ) {
@@ -144,6 +150,8 @@ jQuery(document).ready(function($) {
 
       proxyImage.src = this.src;
 =======
+=======
+>>>>>>> parent of 735c7e8... resolves #11
     function onResize() {
       
     }
@@ -157,8 +165,11 @@ jQuery(document).ready(function($) {
 
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6d3029d... not working
+=======
+>>>>>>> parent of 735c7e8... resolves #11
     // gallery (uses default masonry)     
     /*
     var container = $('.gallery-items');
