@@ -97,6 +97,7 @@
 
 						} ?>
 
+
 						<div class="dportfolio-item <?php echo $col;?>" data-groups="<?php echo $cats_slugs;?>">
 
 							<?php if ( has_post_thumbnail() ) { ?> 
