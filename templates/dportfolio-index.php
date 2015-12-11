@@ -103,7 +103,7 @@
 
 							<?php } ?>
 	
-							<h2><?php the_title();?></h2>
+							<h2 class="dportfolio-thumbnail-title"><?php the_title();?></h2>
 
 							<?php
 								// TODO the_content, the_excerpt, get_the_content... 

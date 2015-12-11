@@ -152,7 +152,7 @@ class DPORTFOLIO_Settings {
 				*/
 				array(
 					'id' 			=> 'show_content',
-					'label'			=> __( 'Show content in thumbnail', 'dportfolio' ),
+					'label'			=> __( 'Show content', 'dportfolio' ),
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'checkbox',
 					'default'		=> 'on'
@@ -184,8 +184,8 @@ class DPORTFOLIO_Settings {
 					'label'			=> __( 'Columns gutter' , 'dportfolio' ),
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'number',
-					'default'		=> 15,
-					'placeholder'	=> __( '20', 'dportfolio' )
+					'default'		=> 30,
+					'placeholder'	=> __( '30', 'dportfolio' )
 				),
 				/*
 				array(

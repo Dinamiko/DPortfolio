@@ -4,42 +4,42 @@
 .col1 {
   width: 100%;
   float: left;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .col2 {
   width: 100%;
   float: left;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .col3 {
   width: 100%;
   float: left;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .col4 {
   width: 100%;
   float: left;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 480px) {
   .col3 {
-    width: 48.3%;
+    width: 45.5%;
   }
   .col4 {
-    width: 48.3%;
+    width: 45.5%;
   }
 }
 
 @media only screen and (min-width: 1020px) {
   .col2 {
-    width: 48.65%;
+    width: 45.5%;
   }
   .col3 {
-    width: 31.59%;
+    width: 30.5%;
   }
   .col4 {
-    width: 23%;
+    width: 21%;
   }
 }
 
@@ -84,7 +84,7 @@
   padding-bottom: 25px;
 }
 
-h2.dportfolio-item-title  {
+h2.dportfolio-thumbnail-title  {
   margin:0;
   padding:0;
   line-height: 130%;

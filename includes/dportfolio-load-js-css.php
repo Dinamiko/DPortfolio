@@ -9,8 +9,10 @@ add_action( 'admin_enqueue_scripts', 'dportfolio_admin_enqueue_styles', 10, 1 );
 
 function dportfolio_enqueue_styles () {
 	
+	/*
 	wp_register_style( 'dportfolio-shuffle-styles', plugins_url( 'dportfolio/assets/css/shuffle-styles.css' ), array(), DPORTFOLIO_VERSION );
-	wp_enqueue_style( 'dportfolio-shuffle-styles' );	
+	wp_enqueue_style( 'dportfolio-shuffle-styles' );
+	*/	
 
 	wp_register_style( 'dportfolio-frontend', plugins_url( 'dportfolio/assets/css/frontend.css' ), array(), DPORTFOLIO_VERSION );
 	wp_enqueue_style( 'dportfolio-frontend' );
@@ -35,7 +37,7 @@ function dportfolio_enqueue_scripts () {
 	wp_register_script( 'dportfolio-frontend', plugins_url( 'dportfolio/assets/js/frontend.js' ), array( 'jquery' ), DPORTFOLIO_VERSION, true );
 
     // get dportfolio_columns_gutter option 
-    $gutter = get_option( 'dportfolio_columns_gutter', 15 );
+    $gutter = get_option( 'dportfolio_columns_gutter', 30 );
 
     $data = array(
         'thumbnails_gutter' => $gutter,
