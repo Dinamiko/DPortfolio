@@ -19,8 +19,12 @@
 	// limit
 	$limit = esc_attr( $dportfolio_atts['limit'] );
 
-	//echo $columns.' '.$col.' '.$filter.' '.$limit;
-	$count = 0;
+	// dportfolio options
+	$dportfolio_show_content = get_option( 'dportfolio_show_content', 'thumbnail_template_default' );
+	$dportfolio_show_content = get_option( 'dportfolio_show_content', 'on' );
+	$dportfolio_content_words = get_option( 'dportfolio_content_words', 20 );
+	$dportfolio_show_categories = get_option( 'dportfolio_show_categories', 'on' );
+	$dportfolio_show_details = get_option( 'dportfolio_show_details', 'on' );
 
 ?>
 
@@ -53,7 +57,7 @@
 
 	<div class="dportfolio-items-container">
 
-		<div class="items">
+		<div class="dportfolio-items">
 
 			<?php
 				$args = array(
@@ -106,6 +110,9 @@
 								// causes a PHP Fatal error:  Allowed memory size of...
 								// Try getting a metafield value 
 								echo get_post_meta( $post->ID, '_client', true );
+							?>
+
+							<?php 
 							?>
 
 						</div>
