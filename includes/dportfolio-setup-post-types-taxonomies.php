@@ -42,7 +42,7 @@ function dportfolio_register_args( $args ) {
 	$args['rewrite'] = array('slug' => $dportfolio_portfolio_slug );
 
 	$args['menu_icon'] = 'dashicons-portfolio';
-	$args['supports'] = array( 'title', 'editor', 'thumbnail' );
+	$args['supports'] = array( 'title', 'editor', 'excerpt', 'thumbnail' );
 	$args['public'] = true;
 	$args['publicly_queryable'] = true;
 	$args['exclude_from_search'] = true;
