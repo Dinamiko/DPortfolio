@@ -127,10 +127,152 @@ class DPORTFOLIO_Settings {
 	 */
 	private function settings_fields () {
 
-		// dportfolio settings
-		$settings['dpbasic'] = array(
+		// Thumbnails
+		$settings['thumbnails'] = array(
+			'title'					=> __( 'Thumbnails', 'dportfolio' ),
+			'description'			=> __( '', 'dportfolio' ),
+			'fields'				=> array(
+				array(
+					'id' 			=> 'thumbnail_template',
+					'label'			=> __( 'Choose template', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'select',
+					'options'		=> array( 'thumbnail_template_default' => 'Default' ),
+					'default'		=> 'thumbnail_template_default'
+				),
+				/*
+				array(
+					'id' 			=> 'thumbnails_columns',
+					'label'			=> __( 'Grid columns', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'select',
+					'options'		=> array( 1 => '1', 2 => '2' ),
+					'default'		=> 2
+				),
+				*/
+				array(
+					'id' 			=> 'show_content',
+					'label'			=> __( 'Show content in thumbnail', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),
+				array(
+					'id' 			=> 'content_words',
+					'label'			=> __( 'Content length' , 'dportfolio' ),
+					'description'	=> __( 'Number of words.', 'dportfolio' ),
+					'type'			=> 'number',
+					'default'		=> 20,
+					'placeholder'	=> __( '20', 'dportfolio' )
+				),
+				array(
+					'id' 			=> 'show_categories',
+					'label'			=> __( 'Show categories', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),	
+				array(
+					'id' 			=> 'show_details',
+					'label'			=> __( 'Show portfolio details', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),											
+
+				/*
+				array(
+					'id' 			=> 'portfolio_slug',
+					'label'			=> __( 'Portfolio URL slug' , 'dportfolio' ),
+					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
+					'type'			=> 'text',
+					'default'		=> 'dportfolio',
+					'placeholder'	=> ''
+				),
+				array(
+					'id' 			=> 'categories_slug',
+					'label'			=> __( 'Categories URL slug' , 'dportfolio' ),
+					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
+					'type'			=> 'text',
+					'default'		=> 'dportfolio_categories',
+					'placeholder'	=> ''
+				),
+				*/
+				
+			)
+		);
+
+		// Portfolio page
+		$settings['portfoliopage'] = array(
+			'title'					=> __( 'Portfolio page', 'dportfolio' ),
+			'description'			=> __( '', 'dportfolio' ),
+			'fields'				=> array(
+				array(
+					'id' 			=> 'portfolio_page_show_categories',
+					'label'			=> __( 'Show categories', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),
+				array(
+					'id' 			=> 'portfolio_page_categories_position',
+					'label'			=> __( 'Categories position', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'select',
+					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
+					'default'		=> 'before_content'
+				),	
+				array(
+					'id' 			=> 'portfolio_page_show_details',
+					'label'			=> __( 'Show details', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),
+				array(
+					'id' 			=> 'portfolio_page_details_position',
+					'label'			=> __( 'Details position', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'select',
+					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
+					'default'		=> 'before_content'
+				),		
+				/*
+				array(
+					'id' 			=> 'thumbnail_template',
+					'label'			=> __( 'Choose template', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'select',
+					'options'		=> array( 'thumbnail_template_default' => 'Default' ),
+					'default'		=> 'wordpress'
+				),
+				*/				
+				/*
+				array(
+					'id' 			=> 'portfolio_slug',
+					'label'			=> __( 'Portfolio URL slug' , 'dportfolio' ),
+					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
+					'type'			=> 'text',
+					'default'		=> 'dportfolio',
+					'placeholder'	=> ''
+				),
+				array(
+					'id' 			=> 'categories_slug',
+					'label'			=> __( 'Categories URL slug' , 'dportfolio' ),
+					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
+					'type'			=> 'text',
+					'default'		=> 'dportfolio_categories',
+					'placeholder'	=> ''
+				),
+				*/
+				
+			)
+		);
+
+		// URL slugs
+		$settings['urlslugs'] = array(
 			'title'					=> __( 'URL slugs', 'dportfolio' ),
-			'description'			=> __( 'Change default DPortfolio URL slugs.', 'dportfolio' ),
+			'description'			=> __( '', 'dportfolio' ),
 			'fields'				=> array(				
 				array(
 					'id' 			=> 'portfolio_slug',

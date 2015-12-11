@@ -1,7 +1,11 @@
 <?php
 /**
- *  This template is used to display DPortfolio index page [dportfolio]
- */
+* dportfolio-index.php
+* This template is used to display the portfolio
+*
+* Do not edit this template directly, 
+* copy this template file and paste in your theme inside a directory named dportfolio 
+*/
 ?>
 
 <?php 
@@ -19,8 +23,12 @@
 	// limit
 	$limit = esc_attr( $dportfolio_atts['limit'] );
 
-	//echo $columns.' '.$col.' '.$filter.' '.$limit;
-	$count = 0;
+	// dportfolio options
+	$dportfolio_show_content = get_option( 'dportfolio_show_content', 'thumbnail_template_default' );
+	$dportfolio_show_content = get_option( 'dportfolio_show_content', 'on' );
+	$dportfolio_content_words = get_option( 'dportfolio_content_words', 20 );
+	$dportfolio_show_categories = get_option( 'dportfolio_show_categories', 'on' );
+	$dportfolio_show_details = get_option( 'dportfolio_show_details', 'on' );
 
 ?>
 
@@ -37,7 +45,7 @@
 				<?php
 
 				$taxonomies = array( 'dportfolio_categories' ); 
-				$terms = get_terms($taxonomies);
+				$terms = get_terms( $taxonomies );
 										
 				foreach ( $terms as $term ) { ?>
 
@@ -53,7 +61,7 @@
 
 	<div class="dportfolio-items-container">
 
-		<div class="items">
+		<div class="dportfolio-items">
 
 			<?php
 				$args = array(
@@ -101,11 +109,17 @@
 	
 							<h2><?php the_title();?></h2>
 
+							<?php 
+								echo get_post_meta( $post->ID, '_client', true ).'<br>';
+								echo get_post_meta( $post->ID, '_website', true ).'<br>'; 
+							?>
+
 							<?php
-								// TODO the_content, the_excerpt, get_the_content... 
-								// causes a PHP Fatal error:  Allowed memory size of...
-								// Try getting a metafield value 
-								echo get_post_meta( $post->ID, '_client', true );
+								// IMPORTANT! don't use the_content, the_excerpt or get_the_excerpt here,
+								// use get_the_content to prevent PHP memory errors. 
+								$content = get_the_content();
+								$trimmed = wp_trim_words($content , $dportfolio_content_words ); 
+								echo $trimmed;
 							?>
 
 						</div>
@@ -122,22 +136,3 @@
 	</div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

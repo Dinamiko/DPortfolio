@@ -1,33 +1,6 @@
 jQuery(window).load(function(){
 
-    var grid = jQuery( '.items' );
-    var filterOptions = jQuery('.filter-options');
-    var btns = filterOptions.children();
-        
-    grid.imagesLoaded( function() {
-        grid.shuffle({
-            itemSelector:'.dportfolio-item',
-            gutterWidth: 30,
-            delimeter:','
-        });   
-    });
-
-    btns.on('click', function() {
-
-        var jQuerythis = jQuery(this),
-        isActive = jQuerythis.hasClass( 'active' ),
-        group = isActive ? 'all' : jQuerythis.data('group');
-
-        if ( !isActive ) { jQuery('.filter-options .active').removeClass('active'); }
-
-        jQuerythis.toggleClass('active');
-        grid.shuffle( 'shuffle', jQuery(this).data('group') );
-
-    });
-
-    function onResize() {
-      
-    }
+    function onResize() { }
     
     jQuery(window).resize(onResize);
     onResize();
@@ -36,7 +9,30 @@ jQuery(window).load(function(){
 
 jQuery(document).ready(function($) {
 
+    var grid = $( '.dportfolio-items' );
+    var filterOptions = $('.filter-options');
+    var btns = filterOptions.children();
+    		
+    grid.imagesLoaded( function() {
+        grid.shuffle({
+            itemSelector:'.dportfolio-item',
+            gutterWidth: 30,
+            delimeter:','
+        });		
+    });
 
+    btns.on('click', function() {
+
+        var $this = $(this),
+        isActive = $this.hasClass( 'active' ),
+        group = isActive ? 'all' : $this.data('group');
+
+        if ( !isActive ) { $('.filter-options .active').removeClass('active'); }
+
+        $this.toggleClass('active');
+        grid.shuffle( 'shuffle', $(this).data('group') );
+
+    });
 
     // gallery (uses default masonry)     
     /*

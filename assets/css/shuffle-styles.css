@@ -5,10 +5,11 @@
   height: 220px;
   margin-top: 24px; }
 .picture-item.shuffle-item {
-  margin-left: 0
-  /* shuffle items shouldn't have a left margin*/ }
+  margin-left: 0;
+  /* shuffle items shouldnt have a left margin*/ 
+}
 .picture-item.picture-item--h2 {
-  height: 464px
+  height: 464px;
   /* 2x the height + 1 gutter */ }
 .picture-item.span6:not(.picture-item--h2) .picture-item__details {
   position: absolute;
