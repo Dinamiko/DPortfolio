@@ -1,5 +1,9 @@
 jQuery(document).ready(function($) {
 
+  // get dportfolio_data 
+  var gutter = dportfolio_data.thumbnails_gutter;
+  console.log(typeof(gutter))
+
   var grid = $( '.dportfolio-items' );
   var filterOptions = $('.filter-options');
   var btns = filterOptions.children();
@@ -7,7 +11,7 @@ jQuery(document).ready(function($) {
   grid.imagesLoaded( function() {
       grid.shuffle({
           itemSelector:'.dportfolio-item',
-          gutterWidth: 30,
+          gutterWidth: parseInt(gutter),
           delimeter:','
       });   
   });
@@ -26,11 +30,12 @@ jQuery(document).ready(function($) {
   });
 
   // gallery (uses default masonry)     
-
+  /*
   var container = $('.gallery-items');
     
   container.imagesLoaded( function() {
       container.masonry({"gutter": 25});
   });
+  */
 
 });

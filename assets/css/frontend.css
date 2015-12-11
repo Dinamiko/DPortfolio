@@ -1,51 +1,30 @@
 /* ----------------------------------------------------------------------------
-  Layout
+  Columns
 ---------------------------------------------------------------------------- */
 .col1 {
   width: 100%;
   float: left;
-  margin-bottom: 30px;
-}
-.col2-full {
-  width: 100%;
-  float: left;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .col2 {
   width: 100%;
   float: left;
-  margin-bottom: 30px;
-}
-.col3-full {
-  width: 100%;
-  float: left;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .col3 {
   width: 100%;
   float: left;
-  margin-bottom: 30px;
-}
-.col4-full {
-  width: 100%;
-  float: left;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .col4 {
   width: 100%;
   float: left;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 480px) {
-  .col3-full {
-    width: 50%;
-  }
   .col3 {
     width: 48.3%;
-  }
-  .col4-full {
-    width: 50%;
   }
   .col4 {
     width: 48.3%;
@@ -53,22 +32,11 @@
 }
 
 @media only screen and (min-width: 1020px) {
-  .col2-full {
-    width: 50%;
-  }
   .col2 {
     width: 48.65%;
-    /*width: 48%;*/
-  }
-  .col3-full {
-    width: 33.3333%;
   }
   .col3 {
     width: 31.59%;
-    /*width: 30.5%;*/
-  }
-  .col4-full {
-    width: 25%;
   }
   .col4 {
     width: 23%;
@@ -78,14 +46,12 @@
 .dportfolio-container {
   width:100%;
   float:left;
-  /*background:red;*/
 }
 
 .dportfolio-nav-filter {
   width:100%;
   float:left;
-  margin-bottom:30px;
-  /*background:blue;*/ 
+  margin-bottom:15px;
 }
 
 .dportfolio-nav-filter button {
@@ -102,7 +68,6 @@
   opacity: 1;
   outline:none;
 }
-
 
 .dportfolio-items-container {
   width:100%;
@@ -124,11 +89,12 @@ h2.dportfolio-item-title  {
   padding:0;
   line-height: 130%;
 }
-
+/*
 .dportfolio-item-content {
   width: 100%;
   padding: 4%;
 }
+*/
 
 .dportfolio-item-content p {}
 

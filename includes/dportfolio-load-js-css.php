@@ -33,6 +33,15 @@ function dportfolio_enqueue_scripts () {
 	*/
 
 	wp_register_script( 'dportfolio-frontend', plugins_url( 'dportfolio/assets/js/frontend.js' ), array( 'jquery' ), DPORTFOLIO_VERSION, true );
+
+    // get dportfolio_columns_gutter option 
+    $gutter = get_option( 'dportfolio_columns_gutter', 15 );
+
+    $data = array(
+        'thumbnails_gutter' => $gutter,
+    );
+
+	wp_localize_script( 'dportfolio-frontend', 'dportfolio_data', $data );	
 	wp_enqueue_script( 'dportfolio-frontend' );
 
 }
