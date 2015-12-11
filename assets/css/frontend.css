@@ -84,26 +84,42 @@
   padding-bottom: 25px;
 }
 
-h2.dportfolio-thumbnail-title  {
+.dportfolio-item h2  {
   margin:0;
   padding:0;
   line-height: 130%;
+
 }
-/*
+
+.dportfolio-item h2 a:link, .dportfolio-item h2 a:visited {
+  text-decoration: none;
+  border: none;
+  box-shadow:none;
+}
+
 .dportfolio-item-content {
-  width: 100%;
-  padding: 4%;
+  width:80%;
+  float:left;
+  padding:10%;
+}
+
+/*
+h2.dportfolio-thumbnail-title a:link, h2.dportfolio-thumbnail-title a:visited {
+  font-family: inherit;
+  text-decoration: none; 
+  color:inherit;
+  font-weight: inherit;
+  background: red;
 }
 */
-
-.dportfolio-item-content p {}
-
+/*
 .dportfolio-item a:link, .dportfolio-item a:visited {
   text-decoration: none;
   border:none;
   color:inherit;
   font-weight: normal;
 }
+*/
 
 .dportfolio-before-content {
   width:100%;

@@ -63,7 +63,7 @@
 				$args = array(
 					'post_type' => 'dportfolio',
 					'post_status' => 'publish',
-					'posts_per_page' => -1
+					'posts_per_page' => $limit
 				);
 					 
 				$the_query = new WP_Query( $args );
@@ -102,18 +102,20 @@
 								</a>
 
 							<?php } ?>
+
+							<div class="dportfolio-item-content">
 	
-							<h2 class="dportfolio-thumbnail-title"><?php the_title();?></h2>
+								<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 
-							<?php
-								// TODO the_content, the_excerpt, get_the_content... 
-								// causes a PHP Fatal error:  Allowed memory size of...
-								// Try getting a metafield value 
-								echo get_post_meta( $post->ID, '_client', true );
-							?>
+								<?php
+									// IMPORTANT! don't use the_content, the_excerpt or get_the_excerpt here,
+									// use get_the_content to prevent PHP memory errors. 
+									$content = get_the_content();
+									$trimmed = wp_trim_words($content , $dportfolio_content_words ); 
+									echo $trimmed;
+								?>
 
-							<?php 
-							?>
+							</div>
 
 						</div>
 					 

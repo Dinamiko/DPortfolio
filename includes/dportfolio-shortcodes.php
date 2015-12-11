@@ -18,7 +18,7 @@ function dportfolio_shortcode( $atts, $content = null ) {
 
 		// 1.1 args
 	    'view' => 'gallery',
-	    'limit' => -1,
+	    'limit' => 15,
 	    'filter' => 'true',
 	    'filter_type' => 'list',		
 
