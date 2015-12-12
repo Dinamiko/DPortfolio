@@ -132,6 +132,7 @@ class DPORTFOLIO_Settings {
 			'title'					=> __( 'Thumbnails', 'dportfolio' ),
 			'description'			=> __( '', 'dportfolio' ),
 			'fields'				=> array(
+				/*
 				array(
 					'id' 			=> 'thumbnail_template',
 					'label'			=> __( 'Choose template', 'dportfolio' ),
@@ -140,6 +141,7 @@ class DPORTFOLIO_Settings {
 					'options'		=> array( 'thumbnail_template_default' => 'Default' ),
 					'default'		=> 'thumbnail_template_default'
 				),
+				*/
 				/*
 				array(
 					'id' 			=> 'thumbnails_columns',
@@ -166,19 +168,20 @@ class DPORTFOLIO_Settings {
 					'placeholder'	=> __( '20', 'dportfolio' )
 				),
 				array(
+					'id' 			=> 'show_details',
+					'label'			=> __( 'Show details', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),	
+				array(
 					'id' 			=> 'show_categories',
 					'label'			=> __( 'Show categories', 'dportfolio' ),
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'checkbox',
 					'default'		=> 'on'
 				),	
-				array(
-					'id' 			=> 'show_details',
-					'label'			=> __( 'Show portfolio details', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'checkbox',
-					'default'		=> 'on'
-				),											
+										
 				array(
 					'id' 			=> 'columns_gutter',
 					'label'			=> __( 'Columns gutter' , 'dportfolio' ),

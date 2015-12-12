@@ -3,6 +3,18 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+* load ... template ...
+*/
+function custom_dportfolio_before_content() {
+
+  $template = new DPortfolio_Template_Loader;
+  $template->get_template_part( 'dportfolio-before-single-content' );
+
+}
+
+//add_action( 'dportfolio_before_content', 'custom_dportfolio_before_content' );
+
+/**
 * Single dportfolio content filter
 */
 /*

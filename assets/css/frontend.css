@@ -72,23 +72,68 @@
 .dportfolio-items-container {
   width:100%;
   float:left;
-  background:green;
+  /*background:green;*/
 }
 
-.dportfolio-item {
-  background:#CCC;
-  text-align: left;
-  padding-left: 0;
+.dportfolio-item-info {
+  width:100%;
+  float:left;
+  /*background:pink;*/
+  padding-top: 5%;
   padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 25px;
+  padding-bottom: 10%;
+  padding-left: 0; 
 }
+
+
+.dportfolio-item-info h2 {
+  /*border:solid 1px yellow;*/
+}
+
+.dportfolio-item-info p {
+  /*border:solid 1px purple;*/
+  padding-left:10%;
+  padding-right: 10%;
+}
+
+
+.dportfolio-item {
+  background:#f6f7fb;
+  border:solid 1px #e6eaef;
+  text-align: left;
+
+  /*
+  padding-left: 5%;
+  padding-right:5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  */
+}
+
 
 .dportfolio-item h2  {
   margin:0;
-  padding:0;
+  padding-top: 20px;
+  padding-right: 10%;
+  padding-bottom: 0;
+  margin-bottom:0;
+  padding-left: 10%;
   line-height: 130%;
+}
 
+p.dportfolio-client {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+p.dportfolio-website {
+  margin-bottom:0;
+}
+
+p.dportfolio-website-content {
+  margin-top: 20px;
 }
 
 .dportfolio-item h2 a:link, .dportfolio-item h2 a:visited {
@@ -98,29 +143,24 @@
 }
 
 .dportfolio-item-content {
-  width:80%;
+  width:100%;
   float:left;
-  padding:10%;
 }
 
 /*
-h2.dportfolio-thumbnail-title a:link, h2.dportfolio-thumbnail-title a:visited {
-  font-family: inherit;
-  text-decoration: none; 
-  color:inherit;
-  font-weight: inherit;
-  background: red;
+a.dportfolio-featured-img {
+  margin-bottom:20px;
+  float:left;
 }
 */
-/*
-.dportfolio-item a:link, .dportfolio-item a:visited {
-  text-decoration: none;
-  border:none;
-  color:inherit;
-  font-weight: normal;
+a.dportfolio-featured-img img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
-*/
 
+/*
 .dportfolio-before-content {
   width:100%;
   float:left;
@@ -144,19 +184,26 @@ h2.dportfolio-thumbnail-title a:link, h2.dportfolio-thumbnail-title a:visited {
   margin:0;
   padding:0;
 }
+*/
 
 .dportfolio-item-categories-container {
-  width:100%;
   float:left;
-  background:orange;
+  /*
+  width:90%;
+  float:left;
+  */
+  /*background:orange;*/
+  margin-top:20px;
   margin-bottom:20px;
+  padding-left: 10%;
+  padding-right:10%;
 }
 
 a.dportfolio-item-categories:link, a.dportfolio-item-categories:visited {
   float:left;
   margin-right:20px;
   margin-bottom:5px;
-  font-size:85%;
+  /*font-size:85%;*/
   opacity: .8;
   padding:0;
   color:inherit;
@@ -170,7 +217,39 @@ p.dportfolio-item-categories {
   float:left;
   margin-right:20px;
   margin-bottom:5px;
+  /*font-size:85%;*/
+  opacity:.8;
+  padding:0;
+  color:inherit;
+}
+
+.dportfolio-item-details-container {
+  width:100%;
+  float:left;
+  /*background:orange;*/
+  margin-bottom:20px;
+}
+/*
+a.dportfolio-item-categories:link, a.dportfolio-item-categories:visited {
+  float:left;
+  margin-right:20px;
+  margin-bottom:5px;
   font-size:85%;
+  opacity: .8;
+  padding:0;
+  color:inherit;
+}
+
+a.dportfolio-item-categories:hover {
+  opacity: 1;
+}
+*/
+
+p.dportfolio-item-categories {
+  float:left;
+  margin-right:20px;
+  margin-bottom:5px;
+  /*font-size:85%;*/
   opacity:.8;
   padding:0;
   color:inherit;
@@ -179,7 +258,7 @@ p.dportfolio-item-categories {
 .dportfolio-media-container {
   width:100%;
   float:left;
-  background:#CCC;
+  /*background:#CCC;*/
 }
 
 /*

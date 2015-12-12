@@ -24,7 +24,7 @@
 	$dportfolio_show_content = get_option( 'dportfolio_show_content', 'on' );
 	$dportfolio_content_words = get_option( 'dportfolio_content_words', 20 );
 	$dportfolio_show_categories = get_option( 'dportfolio_show_categories', 'on' );
-	$dportfolio_show_details = get_option( 'dportfolio_show_details', 'on' );
+	$dportfolio_show_details = get_option( 'dportfolio_show_details', 'on' ); 
 
 ?>
 
@@ -97,26 +97,74 @@
 
 							<?php if ( has_post_thumbnail() ) { ?> 
 
-								<a href="<?php the_permalink();?>">
+								<a class="dportfolio-featured-img" href="<?php the_permalink();?>">
 									<?php the_post_thumbnail('large'); ?>
 								</a>
 
 							<?php } ?>
 
-							<div class="dportfolio-item-content">
-	
-								<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+							<div class="dportfolio-item-info">
 
-								<?php
-									// IMPORTANT! don't use the_content, the_excerpt or get_the_excerpt here,
-									// use get_the_content to prevent PHP memory errors. 
-									$content = get_the_content();
-									$trimmed = wp_trim_words($content , $dportfolio_content_words ); 
-									echo $trimmed;
-								?>
+								<div class="dportfolio-item-content">
+		
+									<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 
-							</div>
+									<?php if( $dportfolio_show_details == 'on' ) { ?>
 
+										<!--<div class="dportfolio-item-details-container">-->
+											<?php 												
+											// dportfolio details (postmeta)
+											global $post;
+											$client = get_post_meta( $post->ID, '_client', true );
+											$website = get_post_meta( $post->ID, '_website', true );   
+
+											if( $client != '' || $website != '' ) { ?>
+
+												<?php if( $client != '' ) { ?>
+
+													<p class="dportfolio-client"><?php _e( '', 'dportfolio' );?><?php echo $client;?></p>
+
+												<?php }
+
+												if( $website != '' ) { ?>
+
+													<p class="dportfolio-website"><a href="<?php echo $website;?>" target="_blank"><?php _e( 'Website', 'dportfolio' );?></a></p>
+
+												<?php } ?>	
+
+											<?php } ?>
+										<!--</div>-->
+
+									<?php } ?>	
+
+									<?php
+										if( $dportfolio_show_content == 'on' ) {
+											// IMPORTANT! don't use the_content, the_excerpt or get_the_excerpt here,
+											// use get_the_content to prevent PHP memory errors. 
+											$content = get_the_content();
+											$trimmed = wp_trim_words($content , $dportfolio_content_words ); 
+											echo '<p class="dportfolio-website-content">'.$trimmed.'</p>';										
+										}
+									?>
+
+								</div>
+
+								<?php if( $dportfolio_show_categories == 'on' ) { ?>
+
+									<div class="dportfolio-item-categories-container">
+										<?php foreach ( $terms as $term ) { ?>
+
+											<a class="dportfolio-item-categories" href="<?php echo get_term_link( $term->term_id, 'dportfolio_categories' );?>">
+												<?php echo $term->name;?>
+											</a>
+			
+										<?php } ?>
+									</div>
+
+								<?php }	?>
+
+							</div>															
+							
 						</div>
 					 
 				<?php }
