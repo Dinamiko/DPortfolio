@@ -1,30 +1,32 @@
-<?php
+<?php 
 
-global $post;
+// show details in single portfolio
 
-$client = get_post_meta( $post->ID, '_client', true );
-$website = get_post_meta( $post->ID, '_website', true );    	
+$dportfolio_portfolio_page_show_details = get_option( 'dportfolio_portfolio_page_show_details', 'on' );
 
-if( $client != '' || $website != '' ) { ?>
+if( $dportfolio_portfolio_page_show_details == 'on' ) { ?>
 
-	<div class="dportfolio-before-content">
+	<div style="margin-bottom:30px;">
 
-	<?php
+		<?php 												
+		global $post;
+		$client = get_post_meta( $post->ID, '_client', true );
+		$website = get_post_meta( $post->ID, '_website', true );   
 
-	if( $client != '' ) { ?>
+		if( $client != '' || $website != '' ) { ?>
 
-		<p><?php _e( 'Client: ', 'dportfolio' );?><?php echo $client;?></p>
+			<?php if( $client != '' ) { ?>
+				<p class="dportfolio-client"><?php _e( '', 'dportfolio' );?><?php echo $client;?></p>
+			<?php }
 
-	<?php }
+			if( $website != '' ) { ?>
+				<p class="dportfolio-website"><a href="<?php echo $website;?>" target="_blank"><?php _e( 'Website', 'dportfolio' );?></a></p>
+			<?php } ?>	
 
-	if( $website != '' ) { ?>
+		<?php } ?>
 
-		<p><a href="<?php echo $website;?>" target="_blank"><?php _e( 'Website', 'dportfolio' );?></a></p>
-
-	<?php }
-
-	?>	
-		
 	</div>
 
 <?php } ?>
+
+

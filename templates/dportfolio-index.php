@@ -111,29 +111,27 @@
 
 									<?php if( $dportfolio_show_details == 'on' ) { ?>
 
-										<!--<div class="dportfolio-item-details-container">-->
-											<?php 												
-											// dportfolio details (postmeta)
-											global $post;
-											$client = get_post_meta( $post->ID, '_client', true );
-											$website = get_post_meta( $post->ID, '_website', true );   
+										<?php 												
+										// dportfolio details (postmeta)
+										global $post;
+										$client = get_post_meta( $post->ID, '_client', true );
+										$website = get_post_meta( $post->ID, '_website', true );   
 
-											if( $client != '' || $website != '' ) { ?>
+										if( $client != '' || $website != '' ) { ?>
 
-												<?php if( $client != '' ) { ?>
+											<?php if( $client != '' ) { ?>
 
-													<p class="dportfolio-client"><?php _e( '', 'dportfolio' );?><?php echo $client;?></p>
+												<p class="dportfolio-client"><?php _e( '', 'dportfolio' );?><?php echo $client;?></p>
 
-												<?php }
+											<?php }
 
-												if( $website != '' ) { ?>
+											if( $website != '' ) { ?>
 
-													<p class="dportfolio-website"><a href="<?php echo $website;?>" target="_blank"><?php _e( 'Website', 'dportfolio' );?></a></p>
+												<p class="dportfolio-website"><a href="<?php echo $website;?>" target="_blank"><?php _e( 'Website', 'dportfolio' );?></a></p>
 
-												<?php } ?>	
+											<?php } ?>	
 
-											<?php } ?>
-										<!--</div>-->
+										<?php } ?>
 
 									<?php } ?>	
 

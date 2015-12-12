@@ -218,21 +218,6 @@ class DPORTFOLIO_Settings {
 			'description'			=> __( '', 'dportfolio' ),
 			'fields'				=> array(
 				array(
-					'id' 			=> 'portfolio_page_show_categories',
-					'label'			=> __( 'Show categories', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'checkbox',
-					'default'		=> 'on'
-				),
-				array(
-					'id' 			=> 'portfolio_page_categories_position',
-					'label'			=> __( 'Categories position', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'select',
-					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
-					'default'		=> 'before_content'
-				),	
-				array(
 					'id' 			=> 'portfolio_page_show_details',
 					'label'			=> __( 'Show details', 'dportfolio' ),
 					'description'	=> __( '', 'dportfolio' ),
@@ -240,13 +225,32 @@ class DPORTFOLIO_Settings {
 					'default'		=> 'on'
 				),
 				array(
+					'id' 			=> 'portfolio_page_show_categories',
+					'label'			=> __( 'Show categories', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'checkbox',
+					'default'		=> 'on'
+				),
+				/*
+				array(
+					'id' 			=> 'portfolio_page_categories_position',
+					'label'			=> __( 'Categories position', 'dportfolio' ),
+					'description'	=> __( '', 'dportfolio' ),
+					'type'			=> 'select',
+					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
+					'default'		=> 'before_content'
+				),
+				*/	
+				/*
+				array(
 					'id' 			=> 'portfolio_page_details_position',
 					'label'			=> __( 'Details position', 'dportfolio' ),
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'select',
 					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
 					'default'		=> 'before_content'
-				),		
+				),
+				*/		
 				/*
 				array(
 					'id' 			=> 'thumbnail_template',

@@ -3,7 +3,33 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
-* load ... template ...
+* Single dportfolio before content
+*/
+function dportfolio_before_single_content( $content ) {
+
+  global $post;
+  
+  if( $post && $post->post_type == 'dportfolio' && is_singular( 'dportfolio' ) && is_main_query() ) {
+
+    $c = $content;
+    $content = '';
+
+    ob_start();
+
+    do_action( 'dportfolio_before_content' );
+
+    $content = ob_get_clean() . $c;
+
+  }
+
+  return $content;
+
+}
+
+add_filter('the_content', 'dportfolio_before_single_content');
+
+/**
+* loads a template before content 
 */
 function custom_dportfolio_before_content() {
 
@@ -12,29 +38,22 @@ function custom_dportfolio_before_content() {
 
 }
 
-//add_action( 'dportfolio_before_content', 'custom_dportfolio_before_content' );
+add_action( 'dportfolio_before_content', 'custom_dportfolio_before_content' );
 
 /**
-* Single dportfolio content filter
+* Single dportfolio after content filter
 */
-/*
-function single_dportfolio_filter_content( $content ) {
+function dportfolio_after_single_content( $content ) {
 
   global $post;
   
   if( $post && $post->post_type == 'dportfolio' && is_singular( 'dportfolio' ) && is_main_query() ) {
 
-
-    // remove default next/prev links of single.php template
-    add_filter( 'next_post_link' , 'docu_remove_default_prevnext_links' );
-    add_filter( 'previous_post_link' , 'docu_remove_default_prevnext_links' );
-
-
-
     ob_start();
-    do_action( 'docu_after_doc_content' );
-    $content .= ob_get_clean();
 
+    do_action( 'dportfolio_after_content' );
+
+    $content .= ob_get_clean();
 
   }
 
@@ -42,5 +61,16 @@ function single_dportfolio_filter_content( $content ) {
 
 }
 
-add_filter('the_content', 'single_dportfolio_filter_content');
+add_filter('the_content', 'dportfolio_after_single_content');
+
+/**
+* load ... template ...
 */
+function custom_dportfolio_after_content() {
+
+  $template = new DPortfolio_Template_Loader;
+  $template->get_template_part( 'dportfolio-after-single-content' );
+
+}
+
+add_action( 'dportfolio_after_content', 'custom_dportfolio_after_content' );
