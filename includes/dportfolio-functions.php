@@ -64,7 +64,7 @@ function dportfolio_after_single_content( $content ) {
 add_filter('the_content', 'dportfolio_after_single_content');
 
 /**
-* load ... template ...
+* loads a template after content 
 */
 function custom_dportfolio_after_content() {
 

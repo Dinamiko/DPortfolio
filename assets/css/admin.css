@@ -1,0 +1,25 @@
+.dportfolio-item {
+	text-align: center;
+	width:89%;
+	padding:5%;
+	float:left;
+	border:solid 1px #CCC;
+	margin-right:0;
+	margin-top:2.5%;
+	background:#FFF;
+}
+
+.dportfolio-item h3 { font-size:180%;}
+.dportfolio-item p { font-size:130%;} 
+
+
+@media only screen and (min-width: 996px) {
+
+	.dportfolio-item {
+		width:29%;
+		padding:5%;
+		margin-right:5%;
+		margin-top:2.5%;
+	}
+
+}

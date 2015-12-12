@@ -46,6 +46,7 @@ class DPORTFOLIO_Settings {
 
 		$page = add_submenu_page('edit.php?post_type=dportfolio', __('Settings','dportfolio'), __('Settings','dportfolio'), 'manage_options', 'dportfolio_settings', array( $this, 'settings_page' ) );
 		
+		add_submenu_page('edit.php?post_type=dportfolio', __('Support','dportfolio'), __('Support','dportfolio'), 'manage_options', 'dportfolio_support', array( $this, 'dportfolio_support_screen' ) );
 		// settings assets
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 
@@ -72,22 +73,6 @@ class DPORTFOLIO_Settings {
 
 	<?php }
 
-	/*
-	public function dportfolio_addons_screen() { ?>
-
-		<div class="wrap">
-			<h2>DPorfolio Addons</h2>
-
-			<div class="">			
-				<h3></h3>
-				<p></p>
-			</div>
-
-		</div>
-
-	<?php }
-	*/
-
 	/**
 	 * Load settings JS & CSS
 	 * @return void
@@ -102,11 +87,9 @@ class DPORTFOLIO_Settings {
     	// We're including the WP media scripts here because they're needed for the image upload field
     	// If you're not including an image upload then you can leave this function call out
     	wp_enqueue_media();
-
     	
     	wp_register_script( 'dportfolio' . '-settings-js', plugins_url( 'dportfolio/assets/js/settings-admin.js' ), array( 'farbtastic', 'jquery' ), '1.0.0' );
-    	wp_enqueue_script( 'dportfolio' . '-settings-js' );
-    	
+    	wp_enqueue_script( 'dportfolio' . '-settings-js' );   	
     	
 	}
 
@@ -132,26 +115,6 @@ class DPORTFOLIO_Settings {
 			'title'					=> __( 'Thumbnails', 'dportfolio' ),
 			'description'			=> __( '', 'dportfolio' ),
 			'fields'				=> array(
-				/*
-				array(
-					'id' 			=> 'thumbnail_template',
-					'label'			=> __( 'Choose template', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'select',
-					'options'		=> array( 'thumbnail_template_default' => 'Default' ),
-					'default'		=> 'thumbnail_template_default'
-				),
-				*/
-				/*
-				array(
-					'id' 			=> 'thumbnails_columns',
-					'label'			=> __( 'Grid columns', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'select',
-					'options'		=> array( 1 => '1', 2 => '2' ),
-					'default'		=> 2
-				),
-				*/
 				array(
 					'id' 			=> 'show_content',
 					'label'			=> __( 'Show content', 'dportfolio' ),
@@ -189,26 +152,7 @@ class DPORTFOLIO_Settings {
 					'type'			=> 'number',
 					'default'		=> 30,
 					'placeholder'	=> __( '30', 'dportfolio' )
-				),
-				/*
-				array(
-					'id' 			=> 'portfolio_slug',
-					'label'			=> __( 'Portfolio URL slug' , 'dportfolio' ),
-					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
-					'type'			=> 'text',
-					'default'		=> 'dportfolio',
-					'placeholder'	=> ''
-				),
-				array(
-					'id' 			=> 'categories_slug',
-					'label'			=> __( 'Categories URL slug' , 'dportfolio' ),
-					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
-					'type'			=> 'text',
-					'default'		=> 'dportfolio_categories',
-					'placeholder'	=> ''
-				),
-				*/
-				
+				),				
 			)
 		);
 
@@ -230,56 +174,7 @@ class DPORTFOLIO_Settings {
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'checkbox',
 					'default'		=> 'on'
-				),
-				/*
-				array(
-					'id' 			=> 'portfolio_page_categories_position',
-					'label'			=> __( 'Categories position', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'select',
-					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
-					'default'		=> 'before_content'
-				),
-				*/	
-				/*
-				array(
-					'id' 			=> 'portfolio_page_details_position',
-					'label'			=> __( 'Details position', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'select',
-					'options'		=> array( 'before_content' => 'Before content', 'after_content' => 'After content' ),
-					'default'		=> 'before_content'
-				),
-				*/		
-				/*
-				array(
-					'id' 			=> 'thumbnail_template',
-					'label'			=> __( 'Choose template', 'dportfolio' ),
-					'description'	=> __( '', 'dportfolio' ),
-					'type'			=> 'select',
-					'options'		=> array( 'thumbnail_template_default' => 'Default' ),
-					'default'		=> 'wordpress'
-				),
-				*/				
-				/*
-				array(
-					'id' 			=> 'portfolio_slug',
-					'label'			=> __( 'Portfolio URL slug' , 'dportfolio' ),
-					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
-					'type'			=> 'text',
-					'default'		=> 'dportfolio',
-					'placeholder'	=> ''
-				),
-				array(
-					'id' 			=> 'categories_slug',
-					'label'			=> __( 'Categories URL slug' , 'dportfolio' ),
-					'description'	=> __( 'Once changed, go to Settings / Permalinks page and Save Changes.', 'dportfolio' ),
-					'type'			=> 'text',
-					'default'		=> 'dportfolio_categories',
-					'placeholder'	=> ''
-				),
-				*/
-				
+				),				
 			)
 		);
 
@@ -303,8 +198,7 @@ class DPORTFOLIO_Settings {
 					'type'			=> 'text',
 					'default'		=> 'dportfolio_categories',
 					'placeholder'	=> ''
-				),
-				
+				),				
 			)
 		);
 

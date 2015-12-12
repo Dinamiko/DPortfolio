@@ -7,12 +7,7 @@ add_action( 'wp_enqueue_scripts', 'dportfolio_enqueue_scripts', 10 );
 add_action( 'admin_enqueue_scripts', 'dportfolio_admin_enqueue_scripts', 10, 1 );
 add_action( 'admin_enqueue_scripts', 'dportfolio_admin_enqueue_styles', 10, 1 );
 
-function dportfolio_enqueue_styles () {
-	
-	/*
-	wp_register_style( 'dportfolio-shuffle-styles', plugins_url( 'dportfolio/assets/css/shuffle-styles.css' ), array(), DPORTFOLIO_VERSION );
-	wp_enqueue_style( 'dportfolio-shuffle-styles' );
-	*/	
+function dportfolio_enqueue_styles () {	
 
 	wp_register_style( 'dportfolio-frontend', plugins_url( 'dportfolio/assets/css/frontend.css' ), array(), DPORTFOLIO_VERSION );
 	wp_enqueue_style( 'dportfolio-frontend' );
@@ -28,11 +23,6 @@ function dportfolio_enqueue_scripts () {
 	wp_enqueue_script( 'dportfolio-shuffle' );
 
 	wp_enqueue_script('masonry');
-
-	/*
-	wp_register_script( 'multipleFilterMasonry', plugins_url( 'dportfolio/assets/js/multipleFilterMasonry.js' ), array( 'jquery' ), DPORTFOLIO_VERSION, true );
-	wp_enqueue_script( 'multipleFilterMasonry' );
-	*/
 
 	wp_register_script( 'dportfolio-frontend', plugins_url( 'dportfolio/assets/js/frontend.js' ), array( 'jquery' ), DPORTFOLIO_VERSION, true );
 
@@ -50,7 +40,9 @@ function dportfolio_enqueue_scripts () {
 
 function dportfolio_admin_enqueue_styles ( $hook = '' ) {
 
-
+	wp_register_style( 'dportfolio-admin', plugins_url( 'dportfolio/assets/css/admin.css' ), array(), DPORTFOLIO_VERSION );
+	wp_enqueue_style( 'dportfolio-admin' );
+	
 }
 
 function dportfolio_admin_enqueue_scripts ( $hook = '' ) {
