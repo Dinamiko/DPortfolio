@@ -181,7 +181,7 @@ class DPORTFOLIO_Settings {
 		// dportfolio settings
 		$settings['urlslugs'] = array(
 			'title'					=> __( 'URL slugs', 'dportfolio' ),
-			'description'			=> __( 'Change default DPortfolio URL slugs.', 'dportfolio' ),
+			'description'			=> __( '', 'dportfolio' ),
 			'fields'				=> array(				
 				array(
 					'id' 			=> 'portfolio_slug',
