@@ -15,7 +15,7 @@ DPortfolio allows creating Portfolio items and categorize them.
 https://vimeo.com/148787583
 See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfolio Demo</a>
 
-= Features =
+== Features ==
 
 * Works with any Theme.
 * [dportfolio] Shortcode with parameters.
