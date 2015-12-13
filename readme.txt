@@ -15,7 +15,7 @@ DPortfolio allows creating Portfolio items and categorize them.
 https://vimeo.com/148787583
 See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfolio Demo</a>
 
-== Features ==
+= Features =
 
 * Works with any Theme.
 * [dportfolio] Shortcode with parameters.
@@ -27,6 +27,14 @@ See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfoli
 * <a href="https://wordpress.org/plugins/dk-pdf/">DK PDF</a>
 * <a href="http://wp.dinamiko.com/demos/dkpdf-generator/">DK PDF Generator (Pro)</a>
 * <a href="https://wordpress.org/plugins/docu/">Docu</a>
+
+= Documentation =
+ 
+* <a href="http://wp.dinamiko.com/demos/dkpdf/documentation" target="_blank">See Documentation</a>
+
+= Collaborate in Github =
+
+* <a href="https://github.com/Dinamiko/dk-pdf" target="_blank">https://github.com/Dinamiko/dk-pdf</a>
 
 == Installation ==
 
