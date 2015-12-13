@@ -30,7 +30,7 @@ See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfoli
 
 = Documentation =
  
-* <a href="http://wp.dinamiko.com/demos/dkpdf/documentation" target="_blank">See Documentation</a>
+* <a href="http://wp.dinamiko.com/demos/dportfolio/documentation" target="_blank">See Documentation</a>
 
 = Collaborate in Github =
 
