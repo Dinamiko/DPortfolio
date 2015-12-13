@@ -7,7 +7,7 @@
  * Author: Emili Castells
  * Author URI: http://www.dinamiko.com
  * Requires at least: 3.9.0
- * Tested up to: 4.3.1
+ * Tested up to: 4.4
  *
  * Text Domain: dportfolio
  * Domain Path: /languages/

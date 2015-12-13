@@ -2,7 +2,7 @@
 Contributors: dinamiko
 Tags: portfolio, projects, responsive, categories, clients, custom, custom fields
 Requires at least: 3.9.9
-Tested up to: 3.9.9
+Tested up to: 4.4
 Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,6 +12,7 @@ Portfolio manager, easy to use and customizable.
 == Description ==
 
 DPortfolio allows creating Portfolio items and categorize them.
+https://vimeo.com/148787583
 See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfolio Demo</a>
 
 = Features =
@@ -46,5 +47,6 @@ http://vestride.github.io/Shuffle/
 == Changelog ==
 = 2.0 =
 * Complete refactoring
+* Backwards compatibility with 1.1 
 = 1.1 =
 * Default filter-type: list, checkbox: [dportfolio filter-type="checkbox"]
