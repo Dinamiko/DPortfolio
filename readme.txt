@@ -23,6 +23,11 @@ See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfoli
 * Flexible template system that allows template overrides in an upgrade safe way.
 * Allows changin plugin URL slugs.
 
+= Related Plugins by Dinamiko =
+* <a href="https://wordpress.org/plugins/dk-pdf/">DK PDF</a>
+* <a href="http://wp.dinamiko.com/demos/dkpdf-generator/">DK PDF Generator (Pro)</a>
+* <a href="https://wordpress.org/plugins/docu/">Docu</a>
+
 == Installation ==
 
 1. Upload the folder `dportfolio` to the directory `/wp-content/plugins/` 
