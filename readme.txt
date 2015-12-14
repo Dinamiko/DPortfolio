@@ -21,7 +21,7 @@ See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfoli
 * [dportfolio] Shortcode with parameters.
 * Choose which content will be shown in Thumbnails and Portfolio pages.
 * Flexible template system that allows template overrides in an upgrade safe way.
-* Allows changin plugin URL slugs.
+* Allows changing plugin URL slugs.
 
 = Related Plugins by Dinamiko =
 * <a href="https://wordpress.org/plugins/dk-pdf/">DK PDF</a>
