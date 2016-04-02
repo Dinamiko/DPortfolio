@@ -45,13 +45,14 @@ if( $dportfolio_portfolio_page_show_categories == 'on' ) { ?>
 	} ?>
 
 	<div style="margin-top:30px;">
-		<?php foreach ( $terms as $term ) { ?>
-
-		<a href="<?php echo get_term_link( $term->term_id, 'dportfolio_categories' );?>">
-			<?php echo $term->name;?>
-		</a>
-					
+		<?php if( $terms ) { ?>
+			<?php foreach ( $terms as $term ) { ?>
+				<a href="<?php echo get_term_link( $term->term_id, 'dportfolio_categories' );?>">
+					<?php echo $term->name;?>
+				</a>						
+			<?php } ?>
 		<?php } ?>
+
 	</div>
 
 <?php }	?>
