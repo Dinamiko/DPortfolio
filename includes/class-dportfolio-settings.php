@@ -25,9 +25,9 @@ class DPORTFOLIO_Settings {
 		// Add settings page to menu
 		add_action( 'admin_menu' , array( $this, 'add_menu_item' ) );
 
-		// Add settings link to plugins page	
+		// Add settings link to plugins page
 		add_filter( 'plugin_action_links_' . plugin_basename( DPORTFOLIO_PLUGIN_FILE ) , array( $this, 'add_settings_link' ) );
-		
+
 	}
 
 	/**
@@ -45,7 +45,7 @@ class DPORTFOLIO_Settings {
 	public function add_menu_item () {
 
 		$page = add_submenu_page('edit.php?post_type=dportfolio', __('Settings','dportfolio'), __('Settings','dportfolio'), 'manage_options', 'dportfolio_settings', array( $this, 'settings_page' ) );
-		
+
 		add_submenu_page('edit.php?post_type=dportfolio', __('Support','dportfolio'), __('Support','dportfolio'), 'manage_options', 'dportfolio_support', array( $this, 'dportfolio_support_screen' ) );
 		// settings assets
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
@@ -53,17 +53,17 @@ class DPORTFOLIO_Settings {
 	}
 
 	public function dportfolio_support_screen() { ?>
-		
+
 		<div class="wrap">
 			<h2>DPorfolio Support</h2>
 
-			<div class="dportfolio-item">			
+			<div class="dportfolio-item">
 				<h3>Documentation</h3>
 				<p>Everything you need to know for getting DPorfolio up and running.</p>
 				<p><a href="http://wp.dinamiko.com/demos/dportfolio/documentation/" target="_blank">Go to Documentation</a></p>
 			</div>
 
-			<div class="dportfolio-item">			
+			<div class="dportfolio-item">
 				<h3>Support</h3>
 				<p>Having trouble? don't worry, create a ticket in the support forum.</p>
 				<p><a href="https://wordpress.org/support/plugin/dportfolio" target="_blank">Go to Support</a></p>
@@ -87,10 +87,10 @@ class DPORTFOLIO_Settings {
     	// We're including the WP media scripts here because they're needed for the image upload field
     	// If you're not including an image upload then you can leave this function call out
     	wp_enqueue_media();
-    	
+
     	wp_register_script( 'dportfolio' . '-settings-js', plugins_url( 'dportfolio/assets/js/settings-admin.js' ), array( 'farbtastic', 'jquery' ), '1.0.0' );
-    	wp_enqueue_script( 'dportfolio' . '-settings-js' );   	
-    	
+    	wp_enqueue_script( 'dportfolio' . '-settings-js' );
+
 	}
 
 	/**
@@ -136,15 +136,15 @@ class DPORTFOLIO_Settings {
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'checkbox',
 					'default'		=> 'on'
-				),	
+				),
 				array(
 					'id' 			=> 'show_categories',
 					'label'			=> __( 'Show categories', 'dportfolio' ),
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'checkbox',
 					'default'		=> 'on'
-				),	
-										
+				),
+
 				array(
 					'id' 			=> 'columns_gutter',
 					'label'			=> __( 'Columns gutter' , 'dportfolio' ),
@@ -152,7 +152,7 @@ class DPORTFOLIO_Settings {
 					'type'			=> 'number',
 					'default'		=> 30,
 					'placeholder'	=> __( '30', 'dportfolio' )
-				),				
+				),
 			)
 		);
 
@@ -174,7 +174,7 @@ class DPORTFOLIO_Settings {
 					'description'	=> __( '', 'dportfolio' ),
 					'type'			=> 'checkbox',
 					'default'		=> 'on'
-				),				
+				),
 			)
 		);
 
@@ -182,7 +182,7 @@ class DPORTFOLIO_Settings {
 		$settings['urlslugs'] = array(
 			'title'					=> __( 'URL slugs', 'dportfolio' ),
 			'description'			=> __( '', 'dportfolio' ),
-			'fields'				=> array(				
+			'fields'				=> array(
 				array(
 					'id' 			=> 'portfolio_slug',
 					'label'			=> __( 'Portfolio URL slug' , 'dportfolio' ),
@@ -198,7 +198,7 @@ class DPORTFOLIO_Settings {
 					'type'			=> 'text',
 					'default'		=> 'dportfolio_categories',
 					'placeholder'	=> ''
-				),				
+				),
 			)
 		);
 
@@ -294,7 +294,7 @@ class DPORTFOLIO_Settings {
 					}
 
 					// Set tab link
-					$tab_link = add_query_arg( array( 'tab' => $section ) );
+					$tab_link = esc_attr(add_query_arg( array( 'tab' => $section ) ));
 					if ( isset( $_GET['settings-updated'] ) ) {
 						$tab_link = remove_query_arg( 'settings-updated', $tab_link );
 					}

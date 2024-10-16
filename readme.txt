@@ -3,7 +3,7 @@ Contributors: dinamiko
 Tags: portfolio, projects, responsive, categories, clients, custom, custom fields
 Requires at least: 3.9.9
 Tested up to: 4.4
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfoli
 * <a href="https://wordpress.org/plugins/docu/">Docu</a>
 
 = Documentation =
- 
+
 * <a href="http://wp.dinamiko.com/demos/dportfolio/documentation" target="_blank">See Documentation</a>
 
 = Collaborate in Github =
@@ -38,7 +38,7 @@ See <a href="http://wp.dinamiko.com/demos/dportfolio/" target="_blank">DPortfoli
 
 == Installation ==
 
-1. Upload the folder `dportfolio` to the directory `/wp-content/plugins/` 
+1. Upload the folder `dportfolio` to the directory `/wp-content/plugins/`
 2. Activate the plugin via the 'Plugins' menu in WordPress
 
 == Screenshots ==
@@ -58,8 +58,12 @@ https://github.com/desandro/imagesloaded
 http://vestride.github.io/Shuffle/
 
 == Changelog ==
+= 2.1 =
+* Fix - Reflected XSS
+
 = 2.0 =
 * Complete refactoring
-* Backwards compatibility with 1.1 
+* Backwards compatibility with 1.1
+
 = 1.1 =
 * Default filter-type: list, checkbox: [dportfolio filter-type="checkbox"]
